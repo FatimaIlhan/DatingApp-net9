@@ -9,7 +9,7 @@ import { map } from 'rxjs';
 export class AccountService {
 private http = inject(HttpClient)
 baseUrl = 'https://localhost:5001/';
-  currentUser = signal<User | null>(null);
+currentUser = signal<User | null>(null);
 
 login(model:any)
 {
