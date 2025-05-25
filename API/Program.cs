@@ -2,6 +2,7 @@ using System.Text;
 using API.Data;
 using API.Extensions;
 using API.Interfaces;
+using API.MiddleWare;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,7 @@ if (app.Environment.IsDevelopment())
 // app.UseHttpsRedirection();
 
 // app.UseAuthorization();
+app.UseMiddleware<ExceptionMiddleWare>();
 app.UseCors(x => x
     .AllowAnyHeader()
     .AllowAnyMethod()
