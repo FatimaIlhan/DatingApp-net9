@@ -1,7 +1,9 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Entities;
 
+[Table("Photos")]
 public class Photo
 {
     public int Id { get; set; }
@@ -9,6 +11,10 @@ public class Photo
     public bool IsMain { get; set; }
 
     public string? PublicId { get; set; }
+
+//navigation properties required one to many relationship
+    public int APPUserId { get; set; }
+    public  AppUser AppUser {get;set;} = null!;
 
 
 }

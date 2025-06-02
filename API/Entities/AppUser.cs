@@ -19,12 +19,13 @@ public class AppUser
   public string? Introduction { get; set; }
 
   public string? LookingFor { get; set; }
+  public string? Interests { get; set; }
 
   public required string City { get; set; }
 
   public required string Country { get; set; }
 
-  public List<Photo> Photos { get; set; } = [];
+  public ICollection<Photo> Photos { get; set; } = [];
 
   public int GetAge()
   {
